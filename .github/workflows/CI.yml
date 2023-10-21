@@ -1,6 +1,7 @@
 name: CI
 
-on: workflow_dispatch
+#on: workflow_dispatch
+on: push
 env:
   IMAGE_NAME: asp-testapp
   
@@ -37,7 +38,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+          tags: cuauhcodes/cuauh_codes_repo:${{ github.run_number }}
+#          tags: ${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
 
 #    - name: Repository Dispatch
 #      uses: peter-evans/repository-dispatch@v1
